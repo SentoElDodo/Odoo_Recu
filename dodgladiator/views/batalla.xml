@@ -1,0 +1,85 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="dodgladiator.batalla_tree">
+            <field name="name">Batalla tree</field>
+            <field name="model">dodgladiator.batalla</field>
+            <field name="arch" type="xml">
+              <tree>
+                <field name="name" string='Batallas'/> 
+              </tree>
+            </field>
+        </record>
+
+        <!-- ______________SEARCH_____________ -->
+        <record model="ir.ui.view" id="dodgladiator.batalla_search">
+          <field name="name">dodgladiator batalla search</field>
+          <field name="model">dodgladiator.batalla</field>
+          <field name="arch" type="xml">
+              <search>
+                  <field name="name"/>
+                  <filter name="batalla_finalizada" string="Batallas Por Finalizar" domain="[('batalla_finalizada','=',True)]" />
+              </search>
+          </field>
+        </record>
+
+        <record model="ir.ui.view" id="dodgladiator.batalla_form">
+          <field name="name">Batalla form</field>
+          <field name="model">dodgladiator.batalla</field>
+          <field name="arch" type="xml">
+            <form>
+              <sheet>
+                <group name="name" string="Batalla">
+                  <field name="name" />
+
+                  <field name="start_date" string="Hora de inicio: "/>
+                  <field name="end_date" string="Hora de inicio: "/>
+                  <field name="time_battle" widget="progressbar"/>
+
+                  
+                  <group name="name" string="Info Player1">
+
+                    <field name="player1" string='Jugador '/>
+                    <field name="reino1" attrs="{
+                      'readonly': [('player1','=',False)]}" />
+                    <field name="dodo1" attrs="{
+                      'readonly': [('reino1','=',False)]}" />       
+
+                  </group>
+                  <group name="name" string="Info Player2">
+
+                    <field name="player2" string='Jugador '/>
+                    <field name="reino2" attrs="{
+                      'readonly': [('player2','=',False)]}" />
+                    <field name="dodo2" attrs="{
+                      'readonly': [('reino2','=',False)]}" />
+      
+                  </group>
+                  <group name="name" string="Info Dodo1">
+
+                    <field name="dodo1_nombre" string='Dodo nombre '/>
+                    <field name="dodo1_image" widget="image" string='Dodo imagen '/>
+                    <field name="dodo1_salud" string='Dodo salud '/>
+                    <field name="dodo1_ataque" string='Dodo ataque '/>
+      
+                  </group>
+                  <group name="name" string="Info Dodo2">
+
+                    <field name="dodo2_nombre" string='Dodo nombre '/>
+                    <field name="dodo2_image" widget="image" string='Dodo imagen '/>
+                    <field name="dodo2_salud" string='Dodo salud '/>
+                    <field name="dodo2_ataque" string='Dodo ataque '/>
+      
+                  </group>
+                  <group name="name" string="Ganador">
+                    <field name="ganador" string='El ganador es: ' />
+                    <button name="%(dodgladiator.create_batalla_wizard)d" type="action" string="Crear Batalla" class="oe_highlight" />
+                  </group>
+                </group>
+              </sheet>
+            </form>     
+          </field>
+        </record>
+
+    </data>
+</odoo>

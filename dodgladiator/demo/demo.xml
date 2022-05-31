@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+            <!-- __________DODOS____________ -->
+          <record id="Dodo_1" model="dodgladiator.dodo">
+            <field name="name">Dodo_Ejemplo_1</field>
+          </record>
+
+          <record id="Dodo_2" model="dodgladiator.dodo">
+            <field name="name">Dodo_Ejemplo_2</field>
+          </record>
+
+          <record id="Dodo_3" model="dodgladiator.dodo">
+            <field name="name">Dodo_Ejemplo_3</field>
+          </record>
+          <!-- _______________REINOS___________ -->
+          <record id="Reino_1" model="dodgladiator.reinos">
+            <field name="name">Reino_1</field>
+          </record>
+
+          <record id="Reino_2" model="dodgladiator.reinos">
+            <field name="name">Reino_2</field>
+          </record>
+
+          <record id="Reino_3" model="dodgladiator.reinos">
+            <field name="name">Reino_3</field>
+          </record>
+         
+
+    </data>
+</odoo>

@@ -1,0 +1,135 @@
+<odoo>
+  <data>
+
+    <!-- ____________PLAYER______________ -->
+
+    <record model="ir.actions.act_window" id="dodgladiator.action_player">
+      <field name="name">Player action</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{'default_name': 'New Player','search_default_player_partner':1,'default_is_player':True}</field>
+
+      <field name="view_ids" eval="[
+      (5, 0, 0),
+      (0, 0, {'view_mode': 'tree', 'view_id': ref('dodgladiator.player_tree')}),
+      (0, 0, {'view_mode': 'form', 'view_id': ref('dodgladiator.player_form')})
+      ]" />
+    </record>
+
+    <!-- ______________ RANKING______________ -->
+
+    <record model="ir.actions.act_window" id="dodgladiator.action_ranking">
+      <field name="name">Ranking</field>
+      <field name="res_model">dodgladiator.ranking</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ______________ BATALLA______________ -->
+
+    <record model="ir.actions.act_window" id="dodgladiator.action_batalla">
+      <field name="name">Batalla</field>
+      <field name="res_model">dodgladiator.batalla</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- ______________ DODOS______________ -->
+
+    <record model="ir.actions.act_window" id="dodgladiator.action_dodos">
+      <field name="name">Dodos</field>
+      <field name="res_model">dodgladiator.dodo</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+
+
+
+    <!-- ________________REINO____________ -->
+    <record model="ir.actions.act_window" id="dodgladiator.action_reinos">
+      <field name="name">Reinos</field>
+      <field name="res_model">dodgladiator.reinos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    
+
+    <!-- _______________COMIDA_____________ -->
+
+    <record model="ir.actions.act_window" id="dodgladiator.action_comida">
+      <field name="name">Comida</field>
+      <field name="res_model">dodgladiator.comida</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model = "ir.ui.view" id="dodgladiator.comida_tree">
+      <field name="name">Comida tree</field>
+      <field name="model">dodgladiator.comida</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="image_comida" widget="image"/> 
+          <field name="name" />
+          <field name="player" string="Player"/>
+          <field name="curacion"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <!-- <record model="ir.cron" forcecreate="True" id="game.cron_update">
+      <field name="name">Game: Cron Update</field>
+      <field name="model_id" ref="model_game_player"/>
+      <field name="state">code</field>
+      <field name="code">model.update_resources()</field>
+      <field name="user_id" ref="base.user_root"/>
+      <field name="interval_number">1</field>
+      <field name="interval_type">minutes</field>
+      <field name="numbercall">-1</field>
+      <field name="activity_user_type">specific</field>
+      <field name="doall" eval="False" />
+  </record>
+
+  Funcio tipo @api.model (en el model)
+ -->
+  
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="dodgladiator.action_server">
+      <field name="name">dodgladiator server</field>
+      <field name="model_id" ref="model_dodgladiator_dodgladiator"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="dodgladiator" id="dodgladiator.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Reinos" id="dodgladiator.menu_1" parent="dodgladiator.menu_root" action="dodgladiator.action_reinos"/>
+    <menuitem name="Dodos" id="dodgladiator.menu_2" parent="dodgladiator.menu_root" action="dodgladiator.action_dodos"/>
+    <menuitem name="Comida" id="dodgladiator.menu_3" parent="dodgladiator.menu_root" action="dodgladiator.action_comida"/>
+    <menuitem name="Player" id="dodgladiator.menu_4" parent="dodgladiator.menu_root" action="dodgladiator.action_player"/>
+    <menuitem name="Batalla" id="dodgladiator.menu_5" parent="dodgladiator.menu_root" action="dodgladiator.action_batalla"/>
+    <menuitem name="Ranking" id="dodgladiator.menu_6" parent="dodgladiator.menu_root" action="dodgladiator.action_ranking"/>
+
+    <!-- actions -->
+
+    <!-- <menuitem name="Reino 1" id="dodgladiator.menu_1_reinos" parent="dodgladiator.menu_1"
+              action="dodgladiator.action_reinos"/>
+  <menuitem name="Reino 2" id="dodgladiator.menu_2_reinos" parent="dodgladiator.menu_1"
+              action="dodgladiator.action_reinos"/> -->
+
+  </data>
+</odoo>

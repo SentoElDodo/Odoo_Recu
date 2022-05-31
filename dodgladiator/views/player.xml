@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+  
+      <record model = "ir.ui.view" id="dodgladiator.player_tree">
+        <field name="name">Player tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="name"/>  
+            <field name="reino" />
+            <field name="dinero"/>
+          </tree>
+        </field>
+      </record>
+
+
+      <record model="ir.ui.view" id="dodgladiator.player_search">
+        <field name="name">dodgladiator player search</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="player_partner" string="Is Player" domain="[('is_player','=',True)]" />
+            </search>
+        </field>
+    </record>
+
+      <record model="ir.ui.view" id="dodgladiator.player_form">
+        <field name="name">Player form</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+          <form>
+            <header>
+              <button name="create_survivor" type="object" string="Create Survivor" class="oe_highlight"/>
+              <button name="button_update_players_progress" type="object" string="Update Progress" class="oe_highlight"/>
+            </header>
+            <sheet>
+              <group name="name" string="Player">
+                <field name="name"/> 
+                <field name="reino" string="Reino"/>
+                <field name="dinero" string="Dinero"/>
+                <field name="dodo_fallecido" string="Dodo Fallecido"/>
+                <field name="dodo" string="Mejor Dodo"/>
+                <field name="is_player"/>
+              </group>
+            </sheet>
+          </form>     
+        </field>
+      </record>
+
+      <record model="ir.ui.view" id="dodgladiator.player_inherit_form">
+        <field name="name">dodgladiator player inherit form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"></field>
+        <field name="arch" type="xml">
+            <field name="vat" position="before">
+                <field name="is_player"/>
+            </field>
+            <notebook position="inside">
+                <page string="Player">
+                    <group>
+                        <field name="reino"/>
+                    </group>
+
+                </page>
+            </notebook>
+        </field>
+    </record>
+      
+    </data>
+</odoo>

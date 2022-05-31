@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="dodgladiator.dodos_form">
+            <field name="name">Dodos form</field>
+            <field name="model">dodgladiator.dodo</field>
+            <field name="arch" type="xml">
+              <form>
+                <sheet>
+                  <field name="image_dodo" widget="image"/>
+                  <group>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="image"  invisible="1"/>
+                    <field name="datacreacion" invisible="1"/>
+                    <field name="ataque"/>
+                    <field name="salud"/>
+                    <field name="datacreacion"/>
+                    <field name="level"/> 
+                    <button type="object" name="subir_lvl" string="Subir Lvl"/>
+                    <button type="object" name="prueba_data_1" string="Prueba tiempo1"/>
+                  </group>
+                </sheet>
+              </form>     
+            </field>
+          </record>
+
+
+          <!-- ___________ACTION DAÑO I VIDA_______________ -->
+
+   <!--  <record model="ir.actions.server" id="dodgladiator.dodo_server_action_ataque">
+      <field name="name">Dodo server action ataque</field>
+      <field name="model_id" ref="model_dodgladiator_dodgladiator"/>
+      <field name="binding_model_id" ref="model_dodgladiator_dodgladiator"/>
+      <field name="state">code</field>
+      <field name="code"> model.action_ataque()</field>
+    </record> -->
+
+    <record model="ir.ui.view" id="dodgladiator.dodo_kanban">
+        <field name="name">dodgladiator.dodo kanban</field>
+        <field name="model">dodgladiator.dodo</field>
+        <field name="arch" type="xml">
+          <kanban>
+            <field name="id" />
+            <templates>
+              <t t-name="kanban-box">
+                <div t-attf-class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                  <a type="open">
+                    <image class="oe_kanban_image"
+                      t-att-src="kanban_image('dodgladiator.dodo', 'image_dodo', record.id.value)"/>
+                  </a>
+                  <div t-attf-class="oe_kanban_content">
+                    <h4>
+                      <a type="edit">
+                        <field name="name"/> 
+                      </a>
+                    </h4>
+                  </div>  
+                </div>
+              </t>
+            </templates>
+          </kanban>
+        </field>
+      </record>
+  
+      <record model="ir.ui.view" id="dodgladiator.dodo_search">
+        <field name="name">dodo search</field>
+        <field name="model">dodgladiator.dodo</field>
+        <field name="arch" type="xml">
+          <search>
+                <field name="name" />
+                <field name="ataque"/>
+                <field name="salud" />
+                <field name="level" />
+          </search>
+        </field>
+      </record>
+
+    </data>
+</odoo>
+  

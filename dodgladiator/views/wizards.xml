@@ -1,0 +1,88 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="dodgladiator.batalla_wizard_form">
+            <field name="name">Batalla_wizard_form</field>
+            <field name="model">dodgladiator.batalla_wizard</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <group states="1">
+                            <field name="name" />
+                    </group>
+
+                    <group states="2">
+                        <field name="player1" />
+                        <field name="reino1" />
+                        <field name="dodo1" />
+                    </group>
+
+                    <group states="3">
+                        <field name="player2" />
+                        <field name="reino2" />
+                        <field name="dodo2"/>
+                    </group>
+
+                    
+                    <footer>  
+                        <button name="create_battle" type="object"
+                                string="Create" class="oe_highlight"/>
+                        <button states="1,2,3" name="next" type="object" string="Next" class="oe_highlight" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="dodgladiator.create_batalla_wizard" model="ir.actions.act_window">
+            <field name="name">Create Battle</field>
+            <field name="res_model">dodgladiator.batalla_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        <!--    <field name="binding_model_id" ref="model_mmog_fortress"/> -->
+        </record>
+
+
+        <!-- ______REINO_____ -->
+
+        <record model="ir.ui.view" id="dodgladiator.reino_wizard_form">
+            <field name="name">Reino_wizard_form</field>
+            <field name="model">dodgladiator.reino_wizard</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <group states="1">
+                            <field name="name" />
+                    </group>
+
+                    <group states="2">
+                        <field name="description" />
+                    </group>
+
+                    <group states="3">
+                        <field name="dodo1" />
+                    </group>
+
+                    
+                    <footer>  
+                        <button name="create_reino" type="object"
+                                string="Create" class="oe_highlight"/>
+                        <button states="1,2,3" name="next" type="object" string="Next" class="oe_highlight" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="dodgladiator.create_reino_wizard" model="ir.actions.act_window">
+            <field name="name">Create Reino</field>
+            <field name="res_model">dodgladiator.reino_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        <!--    <field name="binding_model_id" ref="model_mmog_fortress"/> -->
+        </record>
+
+    </data>
+</odoo>

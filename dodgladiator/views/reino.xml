@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="dodgladiator.reinos_tree">
+            <field name="name">Reinos tree</field>
+            <field name="model">dodgladiator.reinos</field>
+            <field name="arch" type="xml">
+              <tree>
+                <field name="name"/>
+                <field name="description"/> 
+                <field name="dodo"/>
+                <field name="comedor"/>
+                <button type="object" name="añadir_dodos" string="Ampliar Comedor"/>
+              </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dodgladiator.reinos_form">
+          <field name="name">Reino form</field>
+          <field name="model">dodgladiator.reinos</field>
+          <field name="arch" type="xml">
+            <form>
+              <sheet>
+                <group name="name" string="Reino">
+                  <field name="name"/> 
+                  <field name="description" string="Descripcion"/>
+                  <field name="player" string="Jugador"/>
+                  <field name="dodo" string="Dodo"/>
+
+                </group>
+                <group name="name">
+                  <button name="%(dodgladiator.create_reino_wizard)d" type="action" string="Crear Reino" class="oe_highlight" />
+
+                </group>
+              </sheet>
+            </form>     
+          </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dodgladiator_dodgladiator,dodgladiator.dodgladiator,model_dodgladiator_dodgladiator,base.group_user,1,1,1,1
+access_dodgladiator_dodo,dodgladiator.dodo,model_dodgladiator_dodo,base.group_user,1,1,1,1
+access_dodgladiator_reinos,dodgladiator.reinos,model_dodgladiator_reinos,base.group_user,1,1,1,1
+access_dodgladiator_imagenesdodos,dodgladiator.imagenesdodos,model_dodgladiator_imagenesdodos,base.group_user,1,1,1,1
+access_dodgladiator_imagenescomida,dodgladiator.imagenescomida,model_dodgladiator_imagenescomida,base.group_user,1,1,1,1
+access_dodgladiator_comida,dodgladiator.comida,model_dodgladiator_comida,base.group_user,1,1,1,1
+access_dodgladiator_batalla,dodgladiator.batalla,model_dodgladiator_batalla,base.group_user,1,1,1,1
+access_dodgladiator_ranking,dodgladiator.ranking,model_dodgladiator_ranking,base.group_user,1,1,1,1
+access_dodgladiator_batalla_wizard,dodgladiator.batalla_wizard,model_dodgladiator_batalla_wizard,base.group_user,1,1,1,1
+access_dodgladiator_reino_wizard,dodgladiator.reino_wizard,model_dodgladiator_reino_wizard,base.group_user,1,1,1,1

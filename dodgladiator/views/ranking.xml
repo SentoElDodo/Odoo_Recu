@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+
+      <record model="ir.ui.view" id="dodgladiator.ranking_tree">
+        <field name="name">Ranking tree</field>
+        <field name="model">dodgladiator.ranking</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="player" string='Ranking'/> 
+          </tree>
+        </field>
+      </record>
+
+      <record model="ir.ui.view" id="dodgladiator.ranking_form">
+        <field name="name">Ranking form</field>
+        <field name="model">dodgladiator.ranking</field>
+        <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group>
+                <field name="player"/>
+                <field name="dodo"/>
+              </group>
+            </sheet>
+          </form>     
+        </field>
+      </record>    
+    
+    </data>
+</odoo>

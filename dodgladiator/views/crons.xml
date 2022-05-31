@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+
+        <!-- ____________DINERO__________ -->
+        
+       <!--  <record model="ir.cron" forcecreate="True" id="dodgladiator.cron_dinero">
+            <field name="name">Dinero</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">model.crear_dinero()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="activity_user_type">specific</field>
+            <field name="doall" eval="False" />
+        </record> -->
+
+
+        <!-- _______COMIDA___________ -->
+
+        <!-- <record model="ir.cron" forcecreate="True" id="dodgladiator.cron_comida">
+            <field name="name">Comida</field>
+            <field name="model_id" ref="model_dodgladiator_comida"/>
+            <field name="state">code</field>
+            <field name="code">model.crear_comida()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="activity_user_type">specific</field>
+            <field name="doall" eval="False" />
+        </record> -->
+
+       <!--  _________BATALLA_________ -->
+
+       <record model="ir.cron" forcecreate="True" id="dodgladiator.cron_batalla">
+            <field name="name">Batalla</field>
+            <field name="model_id" ref="model_dodgladiator_batalla"/>
+            <field name="state">code</field>
+            <field name="code">model.calcular_batalla()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="activity_user_type">specific</field>
+            <field name="doall" eval="False" />
+        </record>
+    </data>
+</odoo>
